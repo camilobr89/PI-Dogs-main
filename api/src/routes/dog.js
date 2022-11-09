@@ -12,10 +12,10 @@ router.get('/', async (req, res, next) => {
             let nameDog = await allDogs.filter(dog => dog.name.toUpperCase().includes(name.toUpperCase()));
             nameDog.length ? 
             res.status(200).send(nameDog) : 
-            res.status(404).send(`No se encontró ningún perro con el nombre ${name}`);
+            res.status(404).send(`don't exist a dog with the name ${name}`);
         }else {
             res.status(200).json(allDogs ? 
-                allDogs : `no se encontro a ${name}`);
+                allDogs : `don't exist dogs ${name}`);
         }
     } catch (error) {
         console.log(error);
@@ -31,38 +31,72 @@ router.get('/:id', async (req, res) => {
             let idDog = await allDogs.filter(dog => dog.id == id);
             idDog.length ?
             res.status(200).send(idDog) :
-            res.status(404).send(`No se encontró ningún perro con el id ${id}`);
+            res.status(404).send(`don't found dog with id ${id}`);
         }
         
     } catch (error) {
         console.log(error);
-        res.status(202).send(`error: ${id} no es un id valido`);
+        res.status(202).send(`error: ${id} is not a valid id`);
     }
 });
 
-router.post('/', async (req, res) => {
-    let = { name, min_weight, max_weight, min_height, max_height, life_span, image, temperaments, createInDB } = req.body;
+router.post("/", async (req, res) => {
+    let {
+        name,
+        life_span,
+        min_weight, 
+        max_weight, 
+        min_height, 
+        max_height,
+        image,
+        temperament,
+        createInDB,
+    } = req.body;
+    console.log(life_span)
     try {
-        let postDog = await Dog.create({
+        let postDog = await Dog.create ({
             name,
-            min_weight,
-            max_weight,
-            min_height,
-            max_height,
             life_span,
+            min_weight, 
+            max_weight,     
+            min_height, 
+            max_height,
             image,
-            createInDB
+            createInDB,
         })
-        let postTemperamentDB = await Temperament.findAll({
-            where: {
-                name: temperaments
-            }
+        let temperamentDb = await Temperament.findAll ({
+            where: {name: temperament}
         })
-        postDog.addTemperament(postTemperamentDB);
-        res.send('Dog created successfully');
+        postDog.addTemperament(temperamentDb)
+        res.send("Dog add succefully")
     } catch (error) {
-        res.status(500).send('Error dog not created');
+        res.status(500).send("error: post failed")
     }
 });
+
+// router.post('/', async (req, res) => {
+//     let = { name, min_weight, max_weight, min_height, max_height, life_span, image, temperament, createInDB } = req.body;
+//     try {
+//         let postDog = await Dog.create({
+//             name,
+//             min_weight,
+//             max_weight,
+//             min_height,
+//             max_height,
+//             life_span,
+//             image,
+//             createInDB
+//         })
+//         let postTemperamentDB = await Temperament.findAll({
+//             where: {
+//                 name: temperament
+//             }
+//         })
+//         postDog.addTemperament(postTemperamentDB);
+//         res.send('Dog created successfully');
+//     } catch (error) {
+//         res.status(500).send('Error dog not created');
+//     }
+// });
 
 module.exports = router;

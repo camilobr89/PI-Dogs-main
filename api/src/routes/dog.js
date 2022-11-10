@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { Dog, Temperament } = require('../db');
+const { Dogs, Temperament } = require('../db');
 const router = Router();
 const { getDogs } = require('./methods');
 
@@ -52,9 +52,9 @@ router.post("/", async (req, res) => {
         temperament,
         createInDB,
     } = req.body;
-    console.log(life_span)
+    
     try {
-        let postDog = await Dog.create ({
+        let postDog = await Dogs.create ({
             name,
             life_span,
             min_weight, 
@@ -71,6 +71,7 @@ router.post("/", async (req, res) => {
         res.send("Dog add succefully")
     } catch (error) {
         res.status(500).send("error: post failed")
+        console.log(error)
     }
 });
 

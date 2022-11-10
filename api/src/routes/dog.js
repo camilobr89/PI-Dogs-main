@@ -18,7 +18,7 @@ router.get('/', async (req, res, next) => {
                 allDogs : `don't exist dogs ${name}`);
         }
     } catch (error) {
-        console.log(error);
+        res.status(404).send(`don't exist dogs`);
     }
 });
 
@@ -35,7 +35,7 @@ router.get('/:id', async (req, res) => {
         }
         
     } catch (error) {
-        console.log(error);
+       
         res.status(202).send(`error: ${id} is not a valid id`);
     }
 });
@@ -69,35 +69,13 @@ router.post("/", async (req, res) => {
         })
         postDog.addTemperament(temperamentDb)
         res.send("Dog add succefully")
+        //res.json(postDog)
     } catch (error) {
         res.status(500).send("error: post failed")
-        console.log(error)
+        
     }
 });
 
-// router.post('/', async (req, res) => {
-//     let = { name, min_weight, max_weight, min_height, max_height, life_span, image, temperament, createInDB } = req.body;
-//     try {
-//         let postDog = await Dog.create({
-//             name,
-//             min_weight,
-//             max_weight,
-//             min_height,
-//             max_height,
-//             life_span,
-//             image,
-//             createInDB
-//         })
-//         let postTemperamentDB = await Temperament.findAll({
-//             where: {
-//                 name: temperament
-//             }
-//         })
-//         postDog.addTemperament(postTemperamentDB);
-//         res.send('Dog created successfully');
-//     } catch (error) {
-//         res.status(500).send('Error dog not created');
-//     }
-// });
+
 
 module.exports = router;

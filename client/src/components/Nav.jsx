@@ -10,7 +10,6 @@ function Nav() {
                 <div className={style.links}>
                     <Link to= '/dogs'> <button>Home</button></Link>
                     <Link to = '/dogs/create'> <button> Create</button></Link>
-                    <Link to = '/dogs/about'> <button> About</button></Link>
                 </div>
                 {/* <div>
                     <SearchBar />

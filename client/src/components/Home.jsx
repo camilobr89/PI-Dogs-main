@@ -69,8 +69,11 @@ export default function Home (){
 
     return (
         <div className={style.container}>
+            <div className = { style.overlay }></div>
             <div>
-                <Nav />
+                <Nav />                
+            </div>
+            <div>
                 <SearchBar />
             </div>
             
@@ -116,7 +119,7 @@ export default function Home (){
                 setCurrentPage={setCurrentPage}
             />
             </div>
-            <div className={style.card}>
+            <div className  = { style.card } >
                 {currentDog.map(el=> {
                     return(
                         <div key={el.id}  >

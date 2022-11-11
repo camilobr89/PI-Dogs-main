@@ -1,0 +1,43 @@
+.container{
+    height: 100vh;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
+
+.container{
+    background-image: url('../../img/fondo8.png');
+}
+
+
+.welcome{
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    font-size: 40px;
+    height: 4rem;
+    
+}
+
+
+.btn{
+    background-color: rgba(255, 255, 255, 0.836);
+    color: black;
+    border: 1.5px solid black;
+    font-size: 18px;
+    padding: 15px 32px;
+    border-radius: 8px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #FFE699;
+    color: black;
+}
+
+.link{
+    text-decoration: none;
+    margin: 0 auto;
+}

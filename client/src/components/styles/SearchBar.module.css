@@ -1,0 +1,29 @@
+.search{
+    justify-content: center;
+    display: flex;
+    float: initial;
+    margin-top: -36px;
+    align-items: center;
+}
+
+.search button img {
+    width: 20px;
+}
+
+.search button{
+    margin-left: 2px;
+    border-radius: 6px;
+    border: 1.5px solid black;
+    cursor: pointer;
+
+}
+
+.search input {
+    width: 14rem;
+    height: 24px;
+    border-radius: 6px;
+    border: 1.5px solid black;
+}
+
+
+

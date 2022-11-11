@@ -1,0 +1,28 @@
+.card {
+    margin: 4px;
+    border: 2px solid black;
+    height: 386px;
+    width: 210px;
+    background-color: #c9fde0c2;
+    border-radius: 14px;
+}
+.img {
+    width: 200px;
+    height: 250px;
+    border-radius: 12px;
+}
+.card:hover {
+    transform: scale(1.2); 
+}
+.card h4{
+    border-radius: 6px;
+    color: black;
+    background-color: white;
+    margin: 8px;
+}
+.card h6{
+    border-radius: 6px;
+    color: black;
+    background-color: white;
+    margin: 8px;
+}

@@ -1,0 +1,51 @@
+.lista1 {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  background-color: #c9fde0c2;
+  border-radius: 8px;
+  height: 36px;
+  width: 24vw;
+  margin: 10px auto;
+  padding: 0;
+}
+
+.lista1 li {
+  display: flex;
+  margin: 2px;
+}
+
+
+
+.listabtn{
+  background-color: white;
+  color: black;
+  border-radius: 6px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.listabtn:hover{
+  background-color: #FFE699;
+  color: black;
+}
+.btn{
+  border: 1px solid ;
+  border-radius: 8px;
+  height: 26px;
+  cursor: pointer;
+  background-color: white;
+}
+.btn:hover {
+  background-color: #FFE699;
+  color: black;
+}
+.btn2 {
+  background-color: #FFE699;
+  color: black;
+  border: 1px solid black;
+  border-radius: 8px;
+  height: 26px;
+  cursor: pointer;
+}

@@ -7,6 +7,9 @@ import Card from "./Card";
 import SearchBar from "./SearchBar";
 import Pagination from './Pagination'
 import style from './styles/Home.module.css'
+import { Link } from 'react-router-dom';
+
+import ModalDetail from "./ModalDetail";
 
 export default function Home (){
 
@@ -66,6 +69,10 @@ export default function Home (){
 
 
 
+    const [openModal, setOpenModal] = useState(false)
+    const [id, setId] = useState("")
+
+
 
     return (
         <div className={style.container}>
@@ -122,7 +129,8 @@ export default function Home (){
             <div className  = { style.card } >
                 {currentDog.map(el=> {
                     return(
-                        <div key={el.id}  >
+                        <div key={el.id}  onClick={()=>setOpenModal(true)} >
+                            
                             <Card
                                 name = {el.name.toUpperCase()}
                                 id= {el.id}
@@ -133,10 +141,19 @@ export default function Home (){
                                 temperaments={el.temperaments?.map((t) => t.name).join(', ')}
                                 temperament={el.temperament}
                             />
+                            
+                            {openModal && <ModalDetail setOpenModal={setOpenModal} />    }
+                           
+                          
+                            
                         </div>
+                        
                     )
                 })}
             </div>
+
+
+
             <Pagination
                     dogsPerPage={dogsPerPage}
                     allDogs={allDogs.length}

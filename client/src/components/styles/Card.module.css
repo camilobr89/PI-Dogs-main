@@ -8,21 +8,6 @@
     background-repeat:no-repeat;	
 }
 
-/* .card h4{
-    border-radius: 6px;
-    color: black;
-    background-color: white;
-    margin: 8px;
-} */
-/* .card h6{
-    border-radius: 6px;
-    color: black;
-    background-color: white;
-    margin: 8px;
-}   */
-
-
-
 .box {
     position: relative;
     width: 220px;
@@ -32,6 +17,7 @@
     align-items: center;
     transition: 0.5s;
     z-index: 1;
+    cursor: pointer;
    }
    
    .box::before {
@@ -72,65 +58,6 @@
     background: linear-gradient(315deg, #a5f5d5, #23c483)
    }
    
-   /* .box span {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 5;
-    pointer-events: none;
-   } */
-   
-   /* .box span::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    opacity: 0;
-    transition: 0.1s;
-    animation: animate 2s ease-in-out infinite;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08)
-   } */
-   
-   /* .box span::before {
-    top: -40px;
-    left: 40px;
-    width: 50px;
-    height: 50px;
-    opacity: 1;
-   }
-   
-   .box span::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    opacity: 0;
-    transition: 0.5s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    animation-delay: -1s;
-   } */
-   
-   /* .box span:after {
-    bottom: -40px;
-    right: 40px;
-    width: 50px;
-    height: 50px;
-    opacity: 1;
-   } */
-   
    .box .content {
     position: relative;
     width: 300px;
@@ -164,8 +91,6 @@
 
 }
 
-
-/* aliniear contenido h6 a la izquierda  */
 .box .content h6 {
     
     border-radius: 6px;

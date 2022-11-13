@@ -17,6 +17,7 @@
     align-items: center;
     transition: 0.5s;
     cursor: pointer;
+
    }
    
    .box::before {
@@ -126,4 +127,6 @@
     text-decoration: none;
 
 }
+
+
 

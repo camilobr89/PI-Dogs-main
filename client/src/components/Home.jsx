@@ -68,19 +68,10 @@ export default function Home (){
 
 
 
-  
-
- 
-   
-
-
-
     return (
         <div className={style.container}>
-            <div className = { style.overlay }></div>
-            <div>
-                <Nav />                
-            </div>
+            <div className = { style.overlay }></div><br /><br />
+    
             <div>
                 <SearchBar />
             </div>
@@ -110,23 +101,13 @@ export default function Home (){
                         </option>
                     ))}
                 </select> 
-            </div>
-            <button onClick={e => {handleClick(e)}} className={style.refresh}>
-                    Refresh
-            </button>
-            {/* <div>
-            <button  onClick = {() =>paginado(currentPage === 1 ? currentPage : currentPage-1)}> prev </button>
-            <button  onClick = {() =>paginado(currentPage ===23 ? currentPage : currentPage+1)}>Next</button>
-            </div> */}
-            <div className={style.paginado}>
-                <Pagination
-                dogsPerPage={dogsPerPage}
-                allDogs={allDogs.length}
-                paginado={paginado}
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-            />
-            </div>
+                <button onClick={e => {handleClick(e)}} className={style.refresh}>
+                    Reload
+                </button>
+                
+            </div><br /><br /><br />
+
+           
             <div className  = { style.card }  >
                 {currentDog.map(el=> {
                     return(
@@ -151,14 +132,16 @@ export default function Home (){
                 })}
             </div>
 
+            <div className={style.paginado}>
+                <Pagination
+                dogsPerPage={dogsPerPage}
+                allDogs={allDogs.length}
+                paginado={paginado}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+            />
+            </div>
 
-            <Pagination
-                    dogsPerPage={dogsPerPage}
-                    allDogs={allDogs.length}
-                    paginado={paginado}
-                    currentPage={currentPage}
-                    setCurrentPage={setCurrentPage}
-                />
         </div>
     )
 

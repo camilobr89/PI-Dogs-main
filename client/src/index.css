@@ -1,5 +1,12 @@
 body {
-  background: url('../src/img/fondo2.jpg');
+  background: url('../src/assets/pexels-sebastian-coman-travel-3631659.jpg');
+
+  -webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+
+
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

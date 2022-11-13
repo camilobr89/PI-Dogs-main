@@ -1,10 +1,10 @@
 .overlay{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, .5);
+    background: rgba(0, 0, 0, .4);
 } 
 
 .container{
@@ -19,15 +19,21 @@
 }
 
 .filter {
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
     display: flex;
     justify-content: space-around;
     align-items:center;
-    background-color: #c9fde0c2;
+    background: linear-gradient(315deg, #a5f5d5, #23c483);
     border: 1.5px solid black;
     border-radius: 8px;
     width: 600px;
     height: 50px;
     margin: 16px auto 0;
+}
+
+.filter h3{
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .card {
@@ -45,7 +51,7 @@
 
 
 .select {
-    font-family: 'Verdana', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
     color: #444;
     padding: 4px;
@@ -59,13 +65,14 @@
 }
   
 .select:hover{
-    background-color: #FFE699;
+    background-color: #a5f5d5;
     color: black;
 }
 
-.refresh{
+.reload{
     margin: 10px;
     cursor: pointer;
+   
 }
   
 .refresh{
@@ -80,7 +87,8 @@
 }
 
 .refresh:hover{
-    background-color: #FFE699;
+    background-color: #a5f5d5;
     color: black;
 }
+
 

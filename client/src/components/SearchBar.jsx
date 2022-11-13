@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getNameDog } from '../redux/actions';
 import style from './styles/SearchBar.module.css'
-import search from "../img/busqueda.png"
+import ModalCreate from "./ModalCreate";
+
 
 
 export default function SearchBar(){
+
+    const [modalOpen, setModalOpen] = useState(false);
 
     const dispatch = useDispatch()
     const [name, setName] = useState("")
@@ -31,15 +34,35 @@ export default function SearchBar(){
                 <div className={style.search}>
                     <input
                     type = "text"
-                    placeholder='Search...'
+                    className={style.input}
+                    placeholder='Search by name...'
                     value={name}
                     autoComplete='off'
                     onKeyPress={e => e.key === 'Enter' && handleSubmit(e)}
                     onChange = {(e) => handleInputChange(e)}
                     />
-                    <button type = 'submit' 
-                    onClick = {(e) => handleSubmit(e)} > <img src={search} alt="search" />
-                    </button>
+
+                    
+
+      
+                    <button className={style.btn} 
+                    
+                    
+                    onClick={() => {
+                        setModalOpen(true);
+                    }}
+
+                    >Create</button>
+                    {modalOpen && <ModalCreate setOpenModal={setModalOpen} />}
+                    
+
+            
+                    
+                  
+                    
+                    
+
                 </div>
+                
         )
 }

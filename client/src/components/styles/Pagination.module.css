@@ -3,11 +3,14 @@
   justify-content: center;
   align-items:center;
   background-color: #c9fde0c2;
+  background: linear-gradient(315deg, #a5f5d5, #23c483);
   border-radius: 8px;
-  height: 36px;
+  height: 50px;
   width: 24vw;
   margin: 10px auto;
   padding: 0;
+  position: relative;
+  
 }
 
 .lista1 li {
@@ -18,34 +21,46 @@
 
 
 .listabtn{
+  display: flex;
+  width: 50px;
+  height: 30px;
+  justify-content: center;
+  font-size: 20px;
   background-color: white;
   color: black;
   border-radius: 6px;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   cursor: pointer;
+ 
 }
 
 .listabtn:hover{
-  background-color: #FFE699;
+  background-color: #7d95ed;
   color: black;
 }
 .btn{
   border: 1px solid ;
   border-radius: 8px;
   height: 26px;
+  width: 26px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
   background-color: white;
 }
 .btn:hover {
-  background-color: #FFE699;
+  background-color: #7d95ed;
   color: black;
 }
 .btn2 {
-  background-color: #FFE699;
+  background-color: #7d95ed;
   color: black;
   border: 1px solid black;
   border-radius: 8px;
   height: 26px;
+  width: 26px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
 }

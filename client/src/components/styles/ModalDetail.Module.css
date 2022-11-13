@@ -1,3 +1,5 @@
+
+
 .modalBackground {
   width: 100vw;
   height: 100vh;
@@ -5,7 +7,7 @@
   top: 0;
   left: 0;
   z-index: 100;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(5.8px);
@@ -20,7 +22,7 @@
   border-radius: 12px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  display: flex;
+  display: none;
   flex-direction: column;
   padding: 25px;
 }
@@ -32,7 +34,7 @@
 }
 
 .titleCloseBtn {
-  display: flex;
+  display: none;
   justify-content: flex-end;
 }
 
@@ -40,7 +42,7 @@
   background-color: transparent;
   border: none;
   font-size: 25px;
-  cursor: pointer;
+  
 }
 
 .modalContainer .body {
@@ -54,7 +56,7 @@
 
 .modalContainer .footer {
   flex: 20%;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -68,9 +70,31 @@
   color: white;
   border-radius: 8px;
   font-size: 20px;
-  cursor: pointer;
+ 
 }
 
 #cancelBtn {
   background-color: crimson;
 }
+
+.modal-dog img{
+  width: 45%;
+  height: 45%;
+  object-fit: cover;
+}
+
+.modal-dog {
+  
+  display: flex;
+
+
+}
+
+.modal-open {
+  display: flex;
+}
+
+.modal-open .footer{
+  display: flex;
+
+} 

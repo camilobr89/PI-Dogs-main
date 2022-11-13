@@ -1,15 +1,13 @@
 import React from "react";
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllDogs, getTemperaments, filterByTemperaments, filterCreated, orderSort } from '../redux/actions';
+import { getAllDogs, getTemperaments, filterByTemperaments, filterCreated, orderSort, filterById } from '../redux/actions';
 import Nav from "./Nav"
 import Card from "./Card";
 import SearchBar from "./SearchBar";
 import Pagination from './Pagination'
 import style from './styles/Home.module.css'
-import { Link } from 'react-router-dom';
 
-import ModalDetail from "./ModalDetail";
 
 export default function Home (){
 
@@ -65,12 +63,15 @@ export default function Home (){
         dispatch (getAllDogs());
         dispatch (filterByTemperaments())
         dispatch (getTemperaments())
+        dispatch (filterById())
     }, [dispatch])
 
 
 
-    const [openModal, setOpenModal] = useState(false)
-    const [id, setId] = useState("")
+  
+
+ 
+   
 
 
 
@@ -126,10 +127,10 @@ export default function Home (){
                 setCurrentPage={setCurrentPage}
             />
             </div>
-            <div className  = { style.card } >
+            <div className  = { style.card }  >
                 {currentDog.map(el=> {
                     return(
-                        <div key={el.id}  onClick={()=>setOpenModal(true)} >
+                        <div key={el.id}  >
                             
                             <Card
                                 name = {el.name.toUpperCase()}
@@ -140,10 +141,8 @@ export default function Home (){
                                 max_weight = {el.max_weight}
                                 temperaments={el.temperaments?.map((t) => t.name).join(', ')}
                                 temperament={el.temperament}
-                            />
-                            
-                            {openModal && <ModalDetail setOpenModal={setOpenModal} />    }
-                           
+                                
+                            />                    
                           
                             
                         </div>
@@ -151,7 +150,6 @@ export default function Home (){
                     )
                 })}
             </div>
-
 
 
             <Pagination

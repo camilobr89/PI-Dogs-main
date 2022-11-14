@@ -1,3 +1,12 @@
+.errorPerro {
+  display: contents;
+  color: rgba(255, 0, 0, 0.66);
+  font-size: 18px;
+}
+.selects {
+  margin-bottom: 12px;
+}
+
 .modalBackground-dog {
     width: 100vw;
     height: 100vh;
@@ -16,7 +25,7 @@
   
   .modalContainer-dog {
     width: 500px;
-    height: 500px;
+    height: 660px;
     border-radius: 12px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -69,21 +78,26 @@
     border-radius: 8px;
     font-size: 20px;
     cursor: pointer;
+    position: fixed;
   }
   
   #cancelBtn-dog {
     background-color: rgb(255, 94, 126);
   }
 
+ 
+ 
   .form-dog{
     font-family: Arial, Helvetica, sans-serif;
-    display: flex;
+    display: fixed;
     justify-content: left;
     align-items: center;
     flex-direction: column;
     margin-top: 20px;
+    font-size: 25px;
     
   }
+
 
   .ul{
     font-family: Arial, Helvetica, sans-serif;

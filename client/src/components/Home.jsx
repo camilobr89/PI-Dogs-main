@@ -1,8 +1,7 @@
 import React from "react";
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllDogs, getTemperaments, filterByTemperaments, filterCreated, orderSort, filterById } from '../redux/actions';
-import Nav from "./Nav"
+import { getAllDogs, getTemperaments, filterByTemperaments, filterCreated, orderSort} from '../redux/actions';
 import Card from "./Card";
 import SearchBar from "./SearchBar";
 import Pagination from './Pagination'
@@ -50,6 +49,8 @@ export default function Home (){
         setBreeds(e.target.value)
     }
 
+  
+
     const [,setOrden] = useState('Default')
     function handleSort (e){
         e.preventDefault()
@@ -63,7 +64,7 @@ export default function Home (){
         dispatch (getAllDogs());
         dispatch (filterByTemperaments())
         dispatch (getTemperaments())
-        dispatch (filterById())
+     
     }, [dispatch])
 
 

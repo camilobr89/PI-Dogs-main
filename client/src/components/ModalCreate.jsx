@@ -159,7 +159,7 @@ useEffect (() => {
 
         <div>
         <form onSubmit={e => {handleSubmit(e)}} className="form-dog">
-                        <div >
+                        <div className="selects">
                             <label  >Name </label>
                             <input
                           
@@ -167,9 +167,9 @@ useEffect (() => {
                             value= {input.name.toUpperCase()}
                             name="name" 
                             onChange = {(e) => handleChange(e)} />
-                            {errors.name && (<p >{errors.name}</p>)}
+                            {errors.name && (<p className="errorPerro">{errors.name}</p>)}
                         </div>  
-                        <div >
+                        <div className="selects">
                             <label >Life Span </label>
                             <input
                                 
@@ -181,9 +181,9 @@ useEffect (() => {
                                 onChange = {(e) => handleChange(e)}
                             />
                             <label > years </label>
-                            {errors.life_span && (<p >{errors.life_span}</p>)}
+                            {errors.life_span && (<p className="errorPerro">{errors.life_span}</p>)}
                         </div >     
-                        <div >   
+                        <div className="selects">   
                             <label >Min weight   </label>
                             <input
                                
@@ -193,9 +193,9 @@ useEffect (() => {
                                 name="min_weight" 
                                 onChange = {(e) => handleChange(e)}/>
                             <label > kgs </label>
-                                {errors.min_weight && (<p >{errors.min_weight}</p>)}
+                                {errors.min_weight && (<p className="errorPerro">{errors.min_weight}</p>)}
                         </div>
-                        <div >    
+                        <div className="selects">    
                             <label >Max weight   </label>
                             <input
                                 
@@ -206,9 +206,9 @@ useEffect (() => {
                                 onChange = {(e) => handleChange(e)}
                             />
                             <label > kgs </label>
-                        {errors.max_weight && (<p >{errors.max_weight}</p>)} 
+                        {errors.max_weight && (<p className="errorPerro">{errors.max_weight}</p>)} 
                         </div>  
-                        <div >  
+                        <div className="selects">  
                         <label >Min height   </label>
                         <input
                             
@@ -219,9 +219,9 @@ useEffect (() => {
                             onChange = {(e) => handleChange(e)}
                         />
                         <label > cms </label>
-                        {errors.min_height && (<p>{errors.min_height}</p>)} 
+                        {errors.min_height && (<p className="errorPerro">{errors.min_height}</p>)} 
                         </div>    
-                        <div >
+                        <div className="selects">
                             <label >Max height   </label>
                             <input
                                 
@@ -232,9 +232,9 @@ useEffect (() => {
                                 onChange = {(e) => handleChange(e)}
                                 />
                             <label > cms </label>
-                            {errors.max_height && (<p >{errors.max_height}</p>)} 
+                            {errors.max_height && (<p className="errorPerro">{errors.max_height}</p>)} 
                         </div>
-                        <div >
+                        <div className="selects">
                             <label >Picture   </label>
                             <input
                             
@@ -244,7 +244,7 @@ useEffect (() => {
                             onChange = {(e) => handleChange(e)}
                             />
                         </div>
-                        <div >
+                        <div className="selects">
                             <label > Temperaments   </label> 
                             <select value= {input.temperament}  onChange = {(e)=> handleSelect(e)}>
                             {temperaments.map((el) => (<option value={el.name} key={el.id}> {el.name} </option>))}
@@ -253,9 +253,7 @@ useEffect (() => {
                             
                     </div>
 
-                    <div >
-                        
-                    </div>
+                    
                     <div >
                         <ul className="ul">
                             {input.temperament.map(el=>  <li className="li" > {el} <button onClick={() =>handleDelete(el)} >X

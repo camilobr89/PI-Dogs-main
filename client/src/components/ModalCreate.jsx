@@ -274,7 +274,7 @@ useEffect (() => {
         <div className="footer-dog">
         
 
-          {/* <button disabled={Object.keys(errors).length > 0 || input.temperament.length === 0 ? true : false} type ='submit'>Create</button> */}
+    
 
         </div>
 

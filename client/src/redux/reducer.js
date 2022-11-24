@@ -62,12 +62,7 @@ function rootReducer (state = initialState, action){
                 ...state,
                 detail : action.payload
             }
-        
-        // case DELETE:
-        //     return {
-        //         ...state,
-        //         dogs: state.dogs.filter(el => el.id !== action.payload)
-        //     }
+    
 
         case ORDER_SORT:
                 if (action.payload === "default"){

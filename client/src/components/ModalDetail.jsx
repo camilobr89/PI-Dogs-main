@@ -2,7 +2,11 @@ import React  from "react";
 import "./styles/ModalDetail.Module.css";
 
 
-export default function Modal({openModal,  name, image, temperament, temperaments, max_weight, min_weight}) {
+
+
+export default function Modal({openModal,  name, image, temperament, max_weight, min_weight, life_span, min_height, max_height}) {
+
+    
 
   return (
     <div className={`modalBackground ${  openModal &&  'modal-open'} `}>
@@ -12,18 +16,26 @@ export default function Modal({openModal,  name, image, temperament, temperament
          
         </div>
 
-        <div className={`modal-dog`}  >
+        <div className="modal-dog"  >
         
           <img src={image} alt="img not found" />
-          <br /><br />
-          <h4>Nombre:
-          <br /><br />{name}</h4>
-          <br /><br />
-          <h6>Peso: 
-          <br /><br />{min_weight} - {max_weight} Kg</h6>
-          <h5>Temperament: 
-          <br />
-          <br />{temperament} {temperaments}</h5>
+        
+          <h3>Name:<br/><br />
+          {name}</h3>
+         
+          
+          <p>Weight: <br/>         
+          {min_weight} - {max_weight} Kg</p>
+
+          <p>Life Span: <br/>{life_span}</p>
+
+          <p>Height:<br/> {min_height} - {max_height} cms</p>
+         
+          
+          <p className="temperament">Temperament:  <br/>        
+          {temperament} </p>
+          
+             
 
         </div>
 

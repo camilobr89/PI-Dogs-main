@@ -2,14 +2,12 @@ import axios from 'axios';
 
 export const GET_ALL_DOGS = "GET_ALL_DOGS"
 export const GET_TEMPERAMENT = "GET_TEMPERAMENT"
-export const FILTER_BY_TEMPERAMENTS= "FILTER_BY_TEMPERAMENTS";
-
+export const FILTER_BY_TEMPERAMENTS= "FILTER_BY_TEMPERAMENTS"
 export const FILTER_CREATED = "FILTER_CREATED"
 export const GET_NAME_DOG = "GET_NAME_DOG"
 export const ORDER_SORT = "ORDER_SORT"
 export const POST_DOG = "POST_DOG"
 export const GET_DETAIL = "GET_DETAIL"
-export const DELETE = "DELETE"
 
 
 export function getAllDogs () {
@@ -104,17 +102,3 @@ export function getDetail(payload){
     }
 };
 
-export function deleteDog (payload){
-    return async function (dispatch){
-        try{
-            const response = await axios.delete(`http://localhost:3001/dogs/${payload}`);
-            return {
-                type: DELETE,
-                payload: response.data
-            }
-        }
-        catch(error){
-            console.log(error)
-        }
-    }
-}

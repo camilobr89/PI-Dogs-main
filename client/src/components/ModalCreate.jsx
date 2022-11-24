@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import "./styles/ModalCreate.css";
-import { Link,  useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { postDog, getTemperaments } from '../redux/actions'
 import { useDispatch, useSelector } from "react-redux";
 

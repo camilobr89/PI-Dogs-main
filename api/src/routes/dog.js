@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const { where } = require('sequelize');
 const { Dogs, Temperament } = require('../db');
 const router = Router();
 const { getDogs } = require('./methods');
@@ -40,6 +41,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+
 router.post("/", async (req, res) => {
     let {
         name,
@@ -76,6 +78,19 @@ router.post("/", async (req, res) => {
     }
 });
 
+// router.put('/:id', async(req, res) => {
+//     const {name, min_height, max_height, min_weight, max_weight, life_span, temperament, image} = req.body;
+//     if (!name || (!min_height && !max_height) || (!min_weight && !max_weight) || !temperament){
+//         return res.status(404).send('Not all the mandatory fields were filled');
+//     }
+//     try {
+//         const {id} = req.params;
+//         res.status(200).json(await updateDog(id, name, min_height, max_height, min_weight, max_weight, life_span, temperament, image));
+        
+//     } catch (error) {
+//         return res.status(404).json({error: error.message })
+//     }
+// } )
 
 
 module.exports = router;

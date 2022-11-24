@@ -121,6 +121,9 @@ export default function Home (){
                                 image = {el.image}
                                 min_weight = {el.min_weight}
                                 max_weight = {el.max_weight}
+                                life_span = {el.life_span}
+                                min_height = {el.min_height}
+                                max_height = {el.max_height}
                                 temperaments={el.temperaments?.map((t) => t.name).join(', ')}
                                 temperament={el.temperament}
                                 

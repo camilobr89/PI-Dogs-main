@@ -1,4 +1,4 @@
-import { GET_ALL_DOGS, GET_TEMPERAMENT, GET_NAME_DOG, FILTER_BY_TEMPERAMENTS, FILTER_CREATED, ORDER_SORT, POST_DOG, GET_DETAIL, DELETE} from './actions'
+import { GET_ALL_DOGS, GET_TEMPERAMENT, GET_NAME_DOG, FILTER_BY_TEMPERAMENTS, FILTER_CREATED, ORDER_SORT, POST_DOG, GET_DETAIL} from './actions'
 
 const initialState = {
     dogs: [],
@@ -63,11 +63,11 @@ function rootReducer (state = initialState, action){
                 detail : action.payload
             }
         
-        case DELETE:
-            return {
-                ...state,
-                dogs: state.dogs.filter(el => el.id !== action.payload)
-            }
+        // case DELETE:
+        //     return {
+        //         ...state,
+        //         dogs: state.dogs.filter(el => el.id !== action.payload)
+        //     }
 
         case ORDER_SORT:
                 if (action.payload === "default"){

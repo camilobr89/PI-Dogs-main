@@ -5,7 +5,7 @@ import ModalDetail from "./ModalDetail";
 
 
 
-export default function Card({ name, image, id,  max_weight, min_weight,temperament, temperaments}) {
+export default function Card({ name, image, id,  max_weight, min_weight,temperament, temperaments, life_span, min_height, max_height}) {
    
     const [isOpenModal,  setIsOpenModal ] = useState(false)
 
@@ -27,10 +27,11 @@ export default function Card({ name, image, id,  max_weight, min_weight,temperam
             
                 <div className={style.content} >
   
-                        <h4 >Nombre: {name}</h4>
+                        <h4 >Name: {name}</h4>
                         <img className={style.img} src={image} alt="img not found"  />
-                        <h6 >Peso: {min_weight} - {max_weight} Kg</h6>
+                        <h6 >Weight: {min_weight} - {max_weight} Kg</h6>
                         <h5 className={style.temperament}>Temperament: {temperament} {temperaments}</h5>
+
               
                 </div>
 
@@ -45,6 +46,9 @@ export default function Card({ name, image, id,  max_weight, min_weight,temperam
                     temperaments={temperaments}
                     max_weight={max_weight} 
                     min_weight={min_weight} 
+                    life_span={life_span}
+                    min_height={min_height}
+                    max_height={max_height}
                     id={id} 
                     openModal={isOpenModal}
 
@@ -53,6 +57,8 @@ export default function Card({ name, image, id,  max_weight, min_weight,temperam
 
                     
                 }
+
+                
 
 
                 </div>

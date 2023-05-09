@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllDogs, getTemperaments, filterByTemperaments, filterCreated, orderSort} from '../redux/actions';
+import { getAllDogs, getTemperaments, filterByTemperaments, filterCreated, orderSort, orderLife} from '../redux/actions';
 import Card from "./Card";
 import SearchBar from "./SearchBar";
 import Pagination from './Pagination'
@@ -39,6 +39,11 @@ export default function Home (){
     function handleClick(e){
         e.preventDefault();
         dispatch(getAllDogs());
+    }
+
+    function handleClickLife(e){
+        e.preventDefault();
+        dispatch(orderLife)
     }
 
     const [, setBreeds] = useState('All')
@@ -102,6 +107,10 @@ export default function Home (){
                         </option>
                     ))}
                 </select> 
+
+                <button className={style.refresh} onClick={e => {handleClickLife(e)}}>
+                       <option value="filtro">nuevo</option>
+                </button>
                 <button onClick={e => {handleClick(e)}} className={style.refresh}>
                     Reload
                 </button>

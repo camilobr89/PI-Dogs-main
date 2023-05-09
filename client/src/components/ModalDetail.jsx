@@ -4,7 +4,7 @@ import "./styles/ModalDetail.Module.css";
 
 
 
-export default function Modal({openModal,  name, image, temperament, max_weight, min_weight, life_span, min_height, max_height}) {
+export default function Modal({openModal,  name, image, temperament, temperaments, max_weight, min_weight, life_span, min_height, max_height}) {
 
     
 
@@ -33,7 +33,7 @@ export default function Modal({openModal,  name, image, temperament, max_weight,
          
           
           <p className="temperament">Temperament:  <br/>        
-          {temperament} </p>
+          {temperament} {temperaments}</p>
           
              
 

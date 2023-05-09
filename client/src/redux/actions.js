@@ -8,6 +8,7 @@ export const GET_NAME_DOG = "GET_NAME_DOG"
 export const ORDER_SORT = "ORDER_SORT"
 export const POST_DOG = "POST_DOG"
 export const GET_DETAIL = "GET_DETAIL"
+export const ORDER_LIFE = "ORDER_LIFE"
 
 
 export function getAllDogs () {
@@ -57,6 +58,12 @@ export function orderSort(payload){
     }
 }
 
+export function orderLife(payload){
+    return{
+        type: ORDER_LIFE,
+        payload
+    }
+}
 
 export function getNameDog (payload) {
     return async function (dispatch) {

@@ -4,9 +4,10 @@ import "./styles/ModalDetail.Module.css";
 
 
 
-export default function Modal({id, openModal,  name, image, temperament, temperaments, max_weight, min_weight, life_span, min_height, max_height}) {
 
-    
+
+export default function Modal({id, openModal,  name, image, temperament, temperaments, max_weight, min_weight, life_span, min_height, max_height}) {
+ 
 
   return (
     <div className={`modalBackground ${  openModal &&  'modal-open'} `}>
@@ -16,9 +17,12 @@ export default function Modal({id, openModal,  name, image, temperament, tempera
          
         </div>
 
+
+        
         <div className="modal-dog"  >
         
           <img src={image} alt="img not found" />
+          
 
           <h3>ID:<br/><br />
           {id}</h3>

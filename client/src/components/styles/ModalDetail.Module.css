@@ -32,7 +32,6 @@
 
 .modalContainer {
   width: 1070px;
-  height: 575px;
   border-radius: 12px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -59,8 +58,8 @@
   top: 10;
   left: 430px;
   border-radius: 12px;
-  width: 540px;
-  height: 540px;
+  width: 550px;
+  height: 550px;
   max-width: 100%;
   max-height: 100%;
   

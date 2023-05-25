@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getNameDog } from '../redux/actions';
 import style from './styles/SearchBar.module.css'
@@ -9,9 +9,17 @@ import ModalCreate from "./ModalCreate";
 export default function SearchBar(){
 
     const [modalOpen, setModalOpen] = useState(false);
+    
 
     const dispatch = useDispatch()
     const [name, setName] = useState("")
+
+    useEffect(() => {
+        
+        if (name) {
+            dispatch(getNameDog(name));
+        }
+    }, [name, dispatch]); 
 
     function handleInputChange (e) {
         e.preventDefault();

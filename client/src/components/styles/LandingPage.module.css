@@ -71,3 +71,12 @@
   .btn:active {
     transform: translateY(-1px);
   }
+
+  @media (max-width: 700px) {
+    .video{
+        object-fit: unset;
+    }
+    .overlay{
+        height: 100vh;
+    }
+  }

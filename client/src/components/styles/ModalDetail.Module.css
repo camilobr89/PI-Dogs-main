@@ -59,9 +59,9 @@
   left: 430px;
   border-radius: 12px;
   width: 550px;
-  height: 550px;
-  max-width: 100%;
-  max-height: 100%;
+  height: 480px;
+  width: 28rem;
+  height: 29rem;
   
   
 }
@@ -107,4 +107,59 @@
   margin-right: 130px!important;
   margin-left: 43rem;
 
+}
+
+@media (max-width: 1280px) {
+  .modalContainer{
+    width: 72vw;
+    height: 90vh;
+  }
+  .modal-dog img{
+    left: 16rem;
+    top: 63px;
+    width: 28rem;
+    height: 31rem;
+  }
+  .modal-dog h3{
+    margin-left: 28rem;
+  }
+  .modal-dog p{
+    font-size: 16px;
+    padding-top: 12px;
+    margin-right: 9rem;
+  }
+  .temperament{
+    margin-left: 47rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .modal-dog p{
+    display: inline-flex;
+    margin-top: 11px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 22rem;
+    padding-top: 0;
+    font-size: 14px;
+  }
+  .modal-dog img{
+    position: static;
+    border-radius: 12px;
+    margin-top: 0rem;
+    margin-bottom: -16rem;
+    margin-right: 14rem;
+    width: 10rem;
+    height: 12rem;
+
+  }
+  .modal-dog h3{
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 10rem;
+    width: auto;
+  }
+  .temperament{
+    margin-right: 195px!important;
+  }
 }

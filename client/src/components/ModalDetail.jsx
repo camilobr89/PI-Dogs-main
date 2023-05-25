@@ -24,8 +24,7 @@ export default function Modal({id, openModal,  name, image, temperament, tempera
           <img src={image} alt="img not found" />
           
 
-          <h3>ID:<br/><br />
-          {id}</h3>
+       
         
           <h3>Name:<br/><br />
           {name}</h3>

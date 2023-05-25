@@ -93,3 +93,31 @@
 }
 
 
+@media (max-width: 1280px) {
+    .filter{
+        margin: 3rem auto 0;
+    }
+    .card{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .filter{
+        margin: 6rem auto 0;
+        height: 10rem;
+        width: 37vw;
+        /* width: 99vw; */
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center;
+    }
+    .card{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .card div{
+        padding: 0px;
+    }
+}
+

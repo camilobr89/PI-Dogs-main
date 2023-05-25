@@ -71,6 +71,12 @@ export default function Home (){
     }, [dispatch])
 
 
+    useEffect (() => {
+        setCurrentPage(1)     
+    }, [allDogs])
+
+
+
 
     return (
         <div className={style.container}>

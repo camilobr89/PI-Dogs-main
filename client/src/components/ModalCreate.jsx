@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import "./styles/ModalCreate.css";
-import { useHistory } from 'react-router-dom';
-import { postDog, getTemperaments } from '../redux/actions'
+//import { useHistory } from 'react-router-dom';
+import { postDog, getTemperaments, getAllDogs } from '../redux/actions'
 import { useDispatch, useSelector } from "react-redux";
 
 function validate (input) {
@@ -54,13 +54,14 @@ function validate (input) {
 }
 
 
-
 export default function Modal({ setOpenModal }) {
 
   const dispatch = useDispatch();
-  const history = useHistory();
+  //const history = useHistory();
   const temperaments = useSelector((state) =>state.temperaments)
   const [errors, setErrors] = useState({})
+  const [touched, setTouched] = useState({}); 
+
 
   const [input, setInput] = useState({
   name: "",
@@ -74,6 +75,8 @@ export default function Modal({ setOpenModal }) {
 });
 // console.log(input)
 
+
+
 function handleSelect(e) {
   if (input.temperament.includes(e.target.value)) {
       alert("Already in the list");  
@@ -85,6 +88,8 @@ function handleSelect(e) {
   }      
 }
 
+
+
 const handleDelete = (e) => {
   setInput({
    ...input,
@@ -92,10 +97,17 @@ const handleDelete = (e) => {
  })
 }
 
+function handleClickDogs(e){
+  e.preventDefault();
+  dispatch(getAllDogs());
+}
+
+
 function handleSubmit(e) {
   if (input.name && input.temperament) {
   e.preventDefault();
   dispatch(postDog(input))
+  
   alert("Congrats! Your new breed was created")
   setInput({
       name: "",
@@ -107,7 +119,7 @@ function handleSubmit(e) {
       image: "",
       temperament: []
   })
-  history.push("/dogs")
+
 }
 else{
   alert ("Missing info!")
@@ -115,15 +127,18 @@ else{
 }
 
 function handleChange(e) {
-  setInput({
-      ...input,
-      [e.target.name] : e.target.value
-   })
-  //  console.log(input)
-   setErrors(validate({
-       ...input,
-       [e.target.name] : e.target.value
-   }))
+  const value = e.target.value;
+  setInput(prevState => {
+    const newState = { ...prevState, [e.target.name] : value };
+    if (touched[e.target.name]) {
+      setErrors(validate(newState));
+    }
+    return newState;
+  });
+  setTouched({
+    ...touched,
+    [e.target.name]: true
+  });
 }
 
 useEffect (() => {
@@ -140,9 +155,8 @@ useEffect (() => {
         <div className="titleCloseBtn-dog">
 
           <button
-            onClick={() => {
-              setOpenModal(false);
-            }}
+            onClick={e => { setOpenModal(false); handleClickDogs(e)}} 
+            
           >
             X
           </button>
@@ -167,7 +181,7 @@ useEffect (() => {
                             value= {input.name.toUpperCase()}
                             name="name" 
                             onChange = {(e) => handleChange(e)} />
-                            {errors.name && (<p className="errorPerro">{errors.name}</p>)}
+                           {touched.name && errors.name && (<p className="errorPerro">{errors.name}</p>)}
                         </div>  
                         <div className="selects">
                             <label >Life Span </label>
@@ -181,7 +195,7 @@ useEffect (() => {
                                 onChange = {(e) => handleChange(e)}
                             />
                             <label > years </label>
-                            {errors.life_span && (<p className="errorPerro">{errors.life_span}</p>)}
+                            {touched.life_span && errors.life_span && (<p className="errorPerro">{errors.life_span}</p>)}
                         </div >     
                         <div className="selects">   
                             <label >Min weight   </label>
@@ -193,7 +207,7 @@ useEffect (() => {
                                 name="min_weight" 
                                 onChange = {(e) => handleChange(e)}/>
                             <label > kgs </label>
-                                {errors.min_weight && (<p className="errorPerro">{errors.min_weight}</p>)}
+                            {touched.min_weight && errors.min_weight && (<p className="errorPerro">{errors.min_weight}</p>)}
                         </div>
                         <div className="selects">    
                             <label >Max weight   </label>
@@ -206,7 +220,7 @@ useEffect (() => {
                                 onChange = {(e) => handleChange(e)}
                             />
                             <label > kgs </label>
-                        {errors.max_weight && (<p className="errorPerro">{errors.max_weight}</p>)} 
+                            {touched.max_weight && errors.max_weight && (<p className="errorPerro">{errors.max_weight}</p>)}
                         </div>  
                         <div className="selects">  
                         <label >Min height   </label>
@@ -219,7 +233,7 @@ useEffect (() => {
                             onChange = {(e) => handleChange(e)}
                         />
                         <label > cms </label>
-                        {errors.min_height && (<p className="errorPerro">{errors.min_height}</p>)} 
+                        {touched.min_height && errors.min_height && (<p className="errorPerro">{errors.min_height}</p>)}
                         </div>    
                         <div className="selects">
                             <label >Max height   </label>
@@ -232,7 +246,7 @@ useEffect (() => {
                                 onChange = {(e) => handleChange(e)}
                                 />
                             <label > cms </label>
-                            {errors.max_height && (<p className="errorPerro">{errors.max_height}</p>)} 
+                            {touched.max_height && errors.max_height && (<p className="errorPerro">{errors.max_height}</p>)}
                         </div>
                         <div className="selects">
                             <label >Picture   </label>

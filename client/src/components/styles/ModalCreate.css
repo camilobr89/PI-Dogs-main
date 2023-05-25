@@ -118,3 +118,45 @@
     font-size: 14px;
     margin: 2px;
 }
+
+@media (max-width: 1280px) {
+  .modalContainer-dog{
+    height: 524px;
+  }
+  .ul{
+    height: 12vh;
+  }
+  .title-dog h1{
+    font-size: 22px;
+    font-weight: 300;
+  }
+  label{
+    font-size: 18px;
+    font-weight: 300;
+  }
+  .selects{
+    margin-bottom: 4px;
+  }
+  .modalContainer-dog .footer-dog{
+    margin: 56px;
+  }
+  
+}
+
+@media (max-width: 700px) {
+  .modalContainer-dog{
+    width: 100vw;
+    height: 76vh;
+  }
+  label{
+    font-size: 16px;
+    font-weight: 300;
+  }
+  .title-dog h1{
+    font-size: 20px;
+    font-weight: 300;
+  }
+  .form-dog .selects{
+    margin-bottom: -5px;
+  }
+}
